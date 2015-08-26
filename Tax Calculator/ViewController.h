@@ -10,6 +10,13 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *priceTextField;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) IBOutlet UILabel *resultLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+- (IBAction)onCalculateButtonTapped:(id)sender;
+- (IBAction)scButtonState:(UISegmentedControl *)sender;
+
 
 @end
 

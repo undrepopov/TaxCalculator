@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-PZ-evo">
+                                <rect key="frame" x="252" y="117" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EIn-Dy-1nu">
+                                <rect key="frame" x="238" y="49" width="124" height="29"/>
+                                <segments>
+                                    <segment title="CA"/>
+                                    <segment title="CHI"/>
+                                    <segment title="NY"/>
+                                </segments>
+                                <connections>
+                                    <action selector="scButtonState:" destination="BYZ-38-t0r" eventType="valueChanged" id="5q0-UR-rLd"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-Hf-vSc">
+                                <rect key="frame" x="254" y="181" width="92" height="30"/>
+                                <state key="normal" title="Calculate Tax">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCalculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iT5-y0-gIu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-gD-HZe">
+                                <rect key="frame" x="220" y="244" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="i7I-LD-IIl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="LwQ-NF-ElB"/>
+                                    <constraint firstAttribute="height" constant="600" id="n6r-Yb-6Xs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8No-eM-EDZ">
+                                <rect key="frame" x="162" y="40" width="277" height="277"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="277" id="Ecd-ln-iqS"/>
+                                    <constraint firstAttribute="width" constant="277" id="p9M-FV-khZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="NGC-Hf-vSc" secondAttribute="centerX" id="0YJ-yI-OTM"/>
+                            <constraint firstAttribute="centerX" secondItem="i7I-LD-IIl" secondAttribute="centerX" id="9pK-U1-7q8"/>
+                            <constraint firstAttribute="centerX" secondItem="LVC-gD-HZe" secondAttribute="centerX" id="Gaf-IK-M7L"/>
+                            <constraint firstAttribute="centerX" secondItem="EIn-Dy-1nu" secondAttribute="centerX" id="Oc6-06-T50"/>
+                            <constraint firstAttribute="centerY" secondItem="i7I-LD-IIl" secondAttribute="centerY" id="XcS-pc-kbz"/>
+                            <constraint firstAttribute="centerX" secondItem="8No-eM-EDZ" secondAttribute="centerX" id="dDj-fu-J6P"/>
+                            <constraint firstAttribute="centerX" secondItem="8No-eM-EDZ" secondAttribute="centerX" id="qkO-rl-6hH"/>
+                            <constraint firstAttribute="centerX" secondItem="XN5-PZ-evo" secondAttribute="centerX" id="sWD-2G-zkA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="i7I-LD-IIl" id="BuK-lY-Sfx"/>
+                        <outlet property="priceTextField" destination="XN5-PZ-evo" id="OBa-mq-Ras"/>
+                        <outlet property="resultLabel" destination="LVC-gD-HZe" id="bru-eT-o7L"/>
+                        <outlet property="segmentedControl" destination="EIn-Dy-1nu" id="GNm-kW-dKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="316" y="336"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon.png" width="60" height="60"/>
+        <image name="orange_bg.png" width="160" height="284"/>
+    </resources>
 </document>
